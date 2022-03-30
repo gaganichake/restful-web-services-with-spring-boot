@@ -8,6 +8,11 @@ public class HelloWorldBean {
         this.message = message;
     }
 
+    // required to convert the Bean into a JSON object
+    public String getMessage() {
+        return message;
+    }
+
     @Override
     public String toString() {
         return "HelloWorldBean{" +
