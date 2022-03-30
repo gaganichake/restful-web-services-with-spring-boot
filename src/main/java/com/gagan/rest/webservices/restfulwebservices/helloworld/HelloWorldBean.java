@@ -1,4 +1,4 @@
-package com.gagan.rest.webservices.restfulwebservices;
+package com.gagan.rest.webservices.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
 
