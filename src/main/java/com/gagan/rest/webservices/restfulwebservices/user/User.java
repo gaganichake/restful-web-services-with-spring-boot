@@ -1,11 +1,17 @@
 package com.gagan.rest.webservices.restfulwebservices.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Integer id;
 
     @Size(min=2)
@@ -18,6 +24,10 @@ public class User {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
+    }
+
+    public User() {
+
     }
 
     public Integer getId() {
