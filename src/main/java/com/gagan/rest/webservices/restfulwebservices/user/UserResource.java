@@ -1,8 +1,6 @@
 package com.gagan.rest.webservices.restfulwebservices.user;
 
-import org.hibernate.EntityMode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
