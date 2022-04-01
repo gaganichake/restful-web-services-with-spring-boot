@@ -52,4 +52,14 @@ public class UserJPAResource {
                 .toUri();
         return ResponseEntity.created(location).build();//HTTP Status: 201 CREATED
     }
+
+    @GetMapping("/jpa/users/{id}/posts")
+    public List<Post> retrieveAllPostsByUserId(@PathVariable int id) {
+        Optional<User> user = userRepository.findById(id);
+        if(!user.isPresent()) {
+            throw new UserNotFoundException("id - " + id);
+        }
+        // Also added @JsonIgnore in Post -> user
+        return user.get().getPosts();
+    }
 }
