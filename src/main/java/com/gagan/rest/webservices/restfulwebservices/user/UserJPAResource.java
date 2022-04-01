@@ -19,9 +19,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class UserJPAResource {
 
     @Autowired
-    private UserService service;
-
-    @Autowired
     private UserRepository userRepository;
 
     @GetMapping("/jpa/users")
@@ -48,7 +45,7 @@ public class UserJPAResource {
 
     @PostMapping("/jpa/users")
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-        User savedUser = service.save(user);
+        User savedUser = userRepository.save(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(savedUser.getId())
